@@ -1,0 +1,16 @@
+C:\Users\verki\OneDrive\Рабочий стол\proj\6_Particle_System\6_Particle_System\bin\Debug\net8.0-windows\6_Particle_System.exe
+C:\Users\verki\OneDrive\Рабочий стол\proj\6_Particle_System\6_Particle_System\bin\Debug\net8.0-windows\6_Particle_System.deps.json
+C:\Users\verki\OneDrive\Рабочий стол\proj\6_Particle_System\6_Particle_System\bin\Debug\net8.0-windows\6_Particle_System.runtimeconfig.json
+C:\Users\verki\OneDrive\Рабочий стол\proj\6_Particle_System\6_Particle_System\bin\Debug\net8.0-windows\6_Particle_System.dll
+C:\Users\verki\OneDrive\Рабочий стол\proj\6_Particle_System\6_Particle_System\bin\Debug\net8.0-windows\6_Particle_System.pdb
+C:\Users\verki\OneDrive\Рабочий стол\proj\6_Particle_System\6_Particle_System\obj\Debug\net8.0-windows\_6_Particle_System.Form1.resources
+C:\Users\verki\OneDrive\Рабочий стол\proj\6_Particle_System\6_Particle_System\obj\Debug\net8.0-windows\6_Particle_System.csproj.GenerateResource.cache
+C:\Users\verki\OneDrive\Рабочий стол\proj\6_Particle_System\6_Particle_System\obj\Debug\net8.0-windows\6_Particle_System.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\verki\OneDrive\Рабочий стол\proj\6_Particle_System\6_Particle_System\obj\Debug\net8.0-windows\6_Particle_System.AssemblyInfoInputs.cache
+C:\Users\verki\OneDrive\Рабочий стол\proj\6_Particle_System\6_Particle_System\obj\Debug\net8.0-windows\6_Particle_System.AssemblyInfo.cs
+C:\Users\verki\OneDrive\Рабочий стол\proj\6_Particle_System\6_Particle_System\obj\Debug\net8.0-windows\6_Particle_System.csproj.CoreCompileInputs.cache
+C:\Users\verki\OneDrive\Рабочий стол\proj\6_Particle_System\6_Particle_System\obj\Debug\net8.0-windows\6_Particle_System.dll
+C:\Users\verki\OneDrive\Рабочий стол\proj\6_Particle_System\6_Particle_System\obj\Debug\net8.0-windows\refint\6_Particle_System.dll
+C:\Users\verki\OneDrive\Рабочий стол\proj\6_Particle_System\6_Particle_System\obj\Debug\net8.0-windows\6_Particle_System.pdb
+C:\Users\verki\OneDrive\Рабочий стол\proj\6_Particle_System\6_Particle_System\obj\Debug\net8.0-windows\6_Particle_System.genruntimeconfig.cache
+C:\Users\verki\OneDrive\Рабочий стол\proj\6_Particle_System\6_Particle_System\obj\Debug\net8.0-windows\ref\6_Particle_System.dll
