@@ -34,8 +34,12 @@
             tbDirection = new TrackBar();
             lblDirection = new Label();
             label1 = new Label();
+            tbGraviton1 = new TrackBar();
+            tbGraviton2 = new TrackBar();
             ((System.ComponentModel.ISupportInitialize)picDisplay).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tbDirection).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tbGraviton1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tbGraviton2).BeginInit();
             SuspendLayout();
             // 
             // picDisplay
@@ -80,11 +84,31 @@
             label1.TabIndex = 3;
             label1.Text = "Направление";
             // 
+            // tbGraviton1
+            // 
+            tbGraviton1.Location = new Point(340, 419);
+            tbGraviton1.Maximum = 100;
+            tbGraviton1.Name = "tbGraviton1";
+            tbGraviton1.Size = new Size(158, 56);
+            tbGraviton1.TabIndex = 4;
+            tbGraviton1.Scroll += tbGraviton_Scroll;
+            // 
+            // tbGraviton2
+            // 
+            tbGraviton2.Location = new Point(536, 419);
+            tbGraviton2.Maximum = 100;
+            tbGraviton2.Name = "tbGraviton2";
+            tbGraviton2.Size = new Size(148, 56);
+            tbGraviton2.TabIndex = 5;
+            tbGraviton2.Scroll += tbGraviton2_Scroll;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 491);
+            Controls.Add(tbGraviton2);
+            Controls.Add(tbGraviton1);
             Controls.Add(label1);
             Controls.Add(lblDirection);
             Controls.Add(tbDirection);
@@ -93,6 +117,8 @@
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)picDisplay).EndInit();
             ((System.ComponentModel.ISupportInitialize)tbDirection).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tbGraviton1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tbGraviton2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -104,5 +130,7 @@
         private TrackBar tbDirection;
         private Label lblDirection;
         private Label label1;
+        private TrackBar tbGraviton1;
+        private TrackBar tbGraviton2;
     }
 }
