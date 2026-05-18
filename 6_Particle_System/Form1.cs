@@ -1,6 +1,3 @@
-using static _6_Particle_System.IImpactPoint;
-using static _6_Particle_System.Particle;
-
 namespace _6_Particle_System
 {
     public partial class Form1 : Form
@@ -8,7 +5,7 @@ namespace _6_Particle_System
         List<Emitter> emitters = new List<Emitter>();
         Emitter emitter;
 
-        ColorPoint colorPoint;
+        RadarPoint radarPoint;
         ColorPoint leftPoint;
         ColorPoint rightPoint;
 
@@ -33,17 +30,17 @@ namespace _6_Particle_System
             };
             emitters.Add(this.emitter);
 
-            colorPoint = new ColorPoint
+            radarPoint = new RadarPoint
             {
                 X = picDisplay.Width / 2,
                 Y = picDisplay.Height / 2,
-                Color = Color.Magenta
+                Power = 150
             };
-            emitter.impactPoints.Add(colorPoint);
+            emitter.impactPoints.Add(radarPoint);
 
             leftPoint = new ColorPoint
             {
-                X = 100,
+                X = 200,
                 Y = picDisplay.Height / 2,
                 Color = Color.Orange
             };
@@ -51,7 +48,7 @@ namespace _6_Particle_System
 
             rightPoint = new ColorPoint
             {
-                X = picDisplay.Width - 100,
+                X = picDisplay.Width - 200,
                 Y = picDisplay.Height / 2,
                 Color = Color.DeepSkyBlue
             };
@@ -60,8 +57,14 @@ namespace _6_Particle_System
             tbLeftY.Maximum = picDisplay.Height;
             tbRightY.Maximum = picDisplay.Height;
 
+            tbLeftX.Maximum = picDisplay.Width;
+            tbRightX.Maximum = picDisplay.Width;
+
             tbLeftY.Value = picDisplay.Height / 2;
             tbRightY.Value = picDisplay.Height / 2;
+
+            tbLeftX.Value = (int)leftPoint.X;
+            tbRightX.Value = (int)rightPoint.X;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -78,31 +81,19 @@ namespace _6_Particle_System
         }
         private void picDisplay_MouseMove(object sender, MouseEventArgs e)
         {
-            foreach (var emitter in emitters)
+            if (radarPoint != null)
             {
-                emitter.MousePositionX = e.X;
-                emitter.MousePositionY = e.Y;
-            }
-
-            if (colorPoint != null)
-            {
-                colorPoint.X = e.X;
-                colorPoint.Y = e.Y;
+                radarPoint.X = e.X;
+                radarPoint.Y = e.Y;
             }
         }
 
         private void picDisplay_MouseWheel(object sender, MouseEventArgs e)
         {
-            if (e.Delta > 0)
+            if (radarPoint != null)
             {
-                colorPoint.Power += 10;
-            }
-            else
-            {
-                if (colorPoint.Power > 10)
-                {
-                    colorPoint.Power -= 10;
-                }
+                if (e.Delta > 0) radarPoint.Power += 10;
+                else if (radarPoint.Power > 10) radarPoint.Power -= 10;
             }
         }
 
@@ -128,6 +119,16 @@ namespace _6_Particle_System
                 emitter.impactPoints.RemoveAll(p => p is CounterPoint &&
                     Math.Sqrt(Math.Pow(p.X - e.X, 2) + Math.Pow(p.Y - e.Y, 2)) < 50);
             }
+        }
+
+        private void tbLeftX_Scroll(object sender, EventArgs e)
+        {
+            leftPoint.X = tbLeftX.Value;
+        }
+
+        private void tbRightX_Scroll(object sender, EventArgs e)
+        {
+            rightPoint.X = tbRightX.Value;
         }
     }
 }

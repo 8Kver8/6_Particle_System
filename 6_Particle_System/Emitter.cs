@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static _6_Particle_System.IImpactPoint;
-using static _6_Particle_System.Particle;
+﻿using static _6_Particle_System.Particle;
 
 namespace _6_Particle_System
 {
@@ -14,11 +8,7 @@ namespace _6_Particle_System
         public float GravitationY = 1;
 
         List<Particle> particles = new List<Particle>();
-        public int MousePositionX;
-        public int MousePositionY;
-
         public List<IImpactPoint> impactPoints = new List<IImpactPoint>();
-        public int ParticlesCount = 500;
 
         public int X;
         public int Y;
@@ -31,7 +21,6 @@ namespace _6_Particle_System
         public int LifeMin = 20;
         public int LifeMax = 100;
         public int ParticlesPerTick = 1;
-
 
         public Color ColorFrom = Color.White;
         public Color ColorTo = Color.FromArgb(0, Color.Black);
@@ -121,21 +110,5 @@ namespace _6_Particle_System
                 point.Render(g);
             }
         }
-    }
-
-    public class TopEmitter : Emitter
-    {
-        public int Width;
-
-        public override void ResetParticle(Particle particle)
-        {
-            base.ResetParticle(particle);
-
-            particle.X = Particle.rand.Next(Width);
-            particle.Y = 0;
-
-            particle.SpeedY = 1;
-            particle.SpeedX = Particle.rand.Next(-2, 2);
-        }
-    }
+    } 
 }

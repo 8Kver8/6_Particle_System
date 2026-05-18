@@ -33,9 +33,15 @@
             timer1 = new System.Windows.Forms.Timer(components);
             tbLeftY = new TrackBar();
             tbRightY = new TrackBar();
+            tbLeftX = new TrackBar();
+            tbRightX = new TrackBar();
+            label1 = new Label();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)picDisplay).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tbLeftY).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tbRightY).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tbLeftX).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tbRightX).BeginInit();
             SuspendLayout();
             // 
             // picDisplay
@@ -56,7 +62,7 @@
             // 
             // tbLeftY
             // 
-            tbLeftY.Location = new Point(12, 403);
+            tbLeftY.Location = new Point(67, 431);
             tbLeftY.Name = "tbLeftY";
             tbLeftY.Orientation = Orientation.Vertical;
             tbLeftY.Size = new Size(56, 130);
@@ -65,18 +71,56 @@
             // 
             // tbRightY
             // 
-            tbRightY.Location = new Point(772, 403);
+            tbRightY.Location = new Point(742, 431);
             tbRightY.Name = "tbRightY";
             tbRightY.Orientation = Orientation.Vertical;
             tbRightY.Size = new Size(56, 130);
             tbRightY.TabIndex = 2;
             tbRightY.Scroll += tbRightY_Scroll;
             // 
+            // tbLeftX
+            // 
+            tbLeftX.Location = new Point(152, 460);
+            tbLeftX.Name = "tbLeftX";
+            tbLeftX.Size = new Size(200, 56);
+            tbLeftX.TabIndex = 3;
+            tbLeftX.Scroll += tbLeftX_Scroll;
+            // 
+            // tbRightX
+            // 
+            tbRightX.Location = new Point(511, 460);
+            tbRightX.Name = "tbRightX";
+            tbRightX.Size = new Size(200, 56);
+            tbRightX.TabIndex = 4;
+            tbRightX.Scroll += tbRightX_Scroll;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(84, 403);
+            label1.Name = "label1";
+            label1.Size = new Size(225, 20);
+            label1.TabIndex = 5;
+            label1.Text = "Управление оранжевой зоной";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(557, 403);
+            label2.Name = "label2";
+            label2.Size = new Size(187, 20);
+            label2.TabIndex = 6;
+            label2.Text = "Управление синей зоной";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(840, 556);
+            ClientSize = new Size(840, 573);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(tbRightX);
+            Controls.Add(tbLeftX);
             Controls.Add(tbRightY);
             Controls.Add(tbLeftY);
             Controls.Add(picDisplay);
@@ -85,6 +129,8 @@
             ((System.ComponentModel.ISupportInitialize)picDisplay).EndInit();
             ((System.ComponentModel.ISupportInitialize)tbLeftY).EndInit();
             ((System.ComponentModel.ISupportInitialize)tbRightY).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tbLeftX).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tbRightX).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -95,5 +141,9 @@
         private System.Windows.Forms.Timer timer1;
         private TrackBar tbLeftY;
         private TrackBar tbRightY;
+        private TrackBar tbLeftX;
+        private TrackBar tbRightX;
+        private Label label1;
+        private Label label2;
     }
 }

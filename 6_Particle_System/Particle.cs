@@ -1,7 +1,4 @@
-﻿using System;
-using System.Drawing;
-
-namespace _6_Particle_System
+﻿namespace _6_Particle_System
 {
     public class Particle
     {
@@ -57,12 +54,10 @@ namespace _6_Particle_System
             public override void Draw(Graphics g)
             {
                 float k = Math.Min(1f, Life / 100);
-
                 var color = MixColor(ToColor, FromColor, k);
                 var b = new SolidBrush(color);
 
                 g.FillEllipse(b, X - Radius, Y - Radius, Radius * 2, Radius * 2);
-
                 b.Dispose();
             }
         }
