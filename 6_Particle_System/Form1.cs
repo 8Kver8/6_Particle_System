@@ -5,37 +5,29 @@ namespace _6_Particle_System
 {
     public partial class Form1 : Form
     {
-        Emitter emitter; // тут убрали €вное создание
+        List<Emitter> emitters = new List<Emitter>();
+        Emitter emitter; // добавим поле дл€ эмиттера
 
         public Form1()
         {
             InitializeComponent();
             picDisplay.Image = new Bitmap(picDisplay.Width, picDisplay.Height);
 
-            // а тут теперь вручную создаем
-            emitter = new TopEmitter
+            this.emitter = new Emitter // создаю эмиттер и прив€зываю его к полю emitter
             {
-                Width = picDisplay.Width,
-                GravitationY = 0.25f
+                Direction = 0,
+                Spreading = 10,
+                SpeedMin = 10,
+                SpeedMax = 10,
+                ColorFrom = Color.Gold,
+                ColorTo = Color.FromArgb(0, Color.Red),
+                ParticlesPerTick = 10,
+                X = picDisplay.Width / 2,
+                Y = picDisplay.Height / 2,
             };
 
-            emitter.impactPoints.Add(new GravityPoint
-            {
-                X = (float)(picDisplay.Width * 0.25),
-                Y = picDisplay.Height / 2
-            });
-
-            emitter.impactPoints.Add(new AntiGravityPoint
-            {
-                X = picDisplay.Width / 2,
-                Y = picDisplay.Height / 2
-            });
-
-            emitter.impactPoints.Add(new GravityPoint
-            {
-                X = (float)(picDisplay.Width * 0.75),
-                Y = picDisplay.Height / 2
-            });
+            emitters.Add(this.emitter); // все равно добавл€ю в список emitters, чтобы он рендерилс€ и обновл€лс€
+            // а тут теперь вручную создаем
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -55,6 +47,12 @@ namespace _6_Particle_System
             // а тут в эмиттер передаем положение мыфки
             emitter.MousePositionX = e.X;
             emitter.MousePositionY = e.Y;
+        }
+
+        private void tbDirection_Scroll(object sender, EventArgs e)
+        {
+            emitter.Direction = tbDirection.Value; // направлению эмиттера присваиваем значение ползунка 
+            lblDirection.Text = $"{tbDirection.Value}∞"; // добавил вывод значени€
         }
     }
 }
