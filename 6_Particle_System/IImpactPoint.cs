@@ -51,4 +51,36 @@ namespace _6_Particle_System
             g.DrawEllipse(new Pen(Color, 2), X - Power / 2, Y - Power / 2, Power, Power);
         }
     }
+
+    public class CounterPoint : IImpactPoint
+    {
+        public int Count = 0;
+
+        public override void ImpactParticle(Particle particle)
+        {
+            float gX = X - particle.X;
+            float gY = Y - particle.Y;
+            double r = Math.Sqrt(gX * gX + gY * gY);
+
+            if (r < 30)
+            {
+                Count++;
+                particle.Life = 0;
+            }
+        }
+
+        public override void Render(Graphics g)
+        {
+            int redValue = Math.Min(255, Count);
+            var color = Color.FromArgb(255, redValue, 255 - redValue, 0);
+
+            g.DrawEllipse(new Pen(color, 2), X - 30, Y - 30, 60, 60);
+
+            var font = new Font("Verdana", 12, FontStyle.Bold);
+            var str = $"{Count}";
+            var size = g.MeasureString(str, font);
+
+            g.DrawString(str, font, new SolidBrush(color), X - size.Width / 2, Y - size.Height / 2);
+        }
+    }
 }

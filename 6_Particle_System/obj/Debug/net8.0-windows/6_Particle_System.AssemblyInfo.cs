@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("6_Particle_System")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4619e6ead1ce2049989280e5c193bb05d1feb940")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+10dfcbed67f6bf82909b6b13beb5d31d0a2b2728")]
 [assembly: System.Reflection.AssemblyProductAttribute("6_Particle_System")]
 [assembly: System.Reflection.AssemblyTitleAttribute("6_Particle_System")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
