@@ -117,7 +117,7 @@ namespace _6_Particle_System
             else if (e.Button == MouseButtons.Right)
             {
                 emitter.impactPoints.RemoveAll(p => p is CounterPoint &&
-                    Math.Sqrt(Math.Pow(p.X - e.X, 2) + Math.Pow(p.Y - e.Y, 2)) < 50);
+                    Math.Sqrt(Math.Pow(p.X - e.X, 2) + Math.Pow(p.Y - e.Y, 2)) < 30);
             }
         }
 
