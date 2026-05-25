@@ -37,11 +37,14 @@
             tbRightX = new TrackBar();
             label1 = new Label();
             label2 = new Label();
+            tbParticlesPerTick = new TrackBar();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)picDisplay).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tbLeftY).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tbRightY).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tbLeftX).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tbRightX).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tbParticlesPerTick).BeginInit();
             SuspendLayout();
             // 
             // picDisplay
@@ -112,11 +115,33 @@
             label2.TabIndex = 6;
             label2.Text = "Управление синей зоной";
             // 
+            // tbParticlesPerTick
+            // 
+            tbParticlesPerTick.Location = new Point(272, 571);
+            tbParticlesPerTick.Maximum = 100;
+            tbParticlesPerTick.Minimum = 1;
+            tbParticlesPerTick.Name = "tbParticlesPerTick";
+            tbParticlesPerTick.Size = new Size(281, 56);
+            tbParticlesPerTick.TabIndex = 7;
+            tbParticlesPerTick.Value = 1;
+            tbParticlesPerTick.Scroll += tbParticlesPerTick_Scroll;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(296, 541);
+            label3.Name = "label3";
+            label3.Size = new Size(243, 20);
+            label3.TabIndex = 8;
+            label3.Text = " Управление количеством частиц";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(840, 573);
+            ClientSize = new Size(840, 639);
+            Controls.Add(label3);
+            Controls.Add(tbParticlesPerTick);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(tbRightX);
@@ -131,6 +156,7 @@
             ((System.ComponentModel.ISupportInitialize)tbRightY).EndInit();
             ((System.ComponentModel.ISupportInitialize)tbLeftX).EndInit();
             ((System.ComponentModel.ISupportInitialize)tbRightX).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tbParticlesPerTick).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -145,5 +171,7 @@
         private TrackBar tbRightX;
         private Label label1;
         private Label label2;
+        private TrackBar tbParticlesPerTick;
+        private Label label3;
     }
 }

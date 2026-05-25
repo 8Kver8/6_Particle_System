@@ -43,6 +43,7 @@
     public class CounterPoint : IImpactPoint
     {
         public int Count = 0;
+        public const float Radius = 30;
 
         public override void ImpactParticle(Particle particle)
         {
@@ -50,7 +51,7 @@
             float gY = Y - particle.Y;
             double r = Math.Sqrt(gX * gX + gY * gY);
 
-            if (r < 30)
+            if (r < Radius)
             {
                 Count++;
                 particle.Life = 0;
@@ -62,7 +63,7 @@
             int redValue = Math.Min(255, Count);
             var color = Color.FromArgb(255, redValue, 255 - redValue, 0);
 
-            g.DrawEllipse(new Pen(color, 2), X - 30, Y - 30, 60, 60);
+            g.DrawEllipse(new Pen(color, 2), X - Radius, Y - Radius, Radius * 2, Radius * 2);
 
             var font = new Font("Verdana", 12, FontStyle.Bold);
             var str = $"{Count}";

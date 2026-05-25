@@ -117,7 +117,7 @@ namespace _6_Particle_System
             else if (e.Button == MouseButtons.Right)
             {
                 emitter.impactPoints.RemoveAll(p => p is CounterPoint &&
-                    Math.Sqrt(Math.Pow(p.X - e.X, 2) + Math.Pow(p.Y - e.Y, 2)) < 30);
+                   Math.Sqrt(Math.Pow(p.X - e.X, 2) + Math.Pow(p.Y - e.Y, 2)) < CounterPoint.Radius);
             }
         }
 
@@ -129,6 +129,11 @@ namespace _6_Particle_System
         private void tbRightX_Scroll(object sender, EventArgs e)
         {
             rightPoint.X = tbRightX.Value;
+        }
+
+        private void tbParticlesPerTick_Scroll(object sender, EventArgs e)
+        {
+            emitter.ParticlesPerTick = tbParticlesPerTick.Value;
         }
     }
 }
